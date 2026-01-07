@@ -54,3 +54,9 @@ SELECT titre
 FROM Article
 ORDER BY date_pub DESC
 LIMIT 5;
+
+
+SELECT * FROM TABLE;
+
+SELECT nom,email
+FROM ARTICLE;
