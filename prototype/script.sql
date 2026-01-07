@@ -146,3 +146,59 @@ WHERE Nom = 'ALAMI' AND Prenom = 'AHMED';
 
 
 
+
+
+SELECT nom_projet,date_debut,date_fin
+FROM PROJET;
+
+SELECT id_EMPLOYE FROM EMPLOYE WHERE Nom LIKE 'EL%';
+
+SELECT * FROM TACHE 
+WHERE id_projet = 234 
+ORDER BY priorité ASC;
+
+SELECT * FROM PROJET
+WHERE date_fin < 2026-04-01;
+
+SELECT * FROM EMPLOYE
+WHERE Role = 'developpeur'
+
+SELECT * FROM TACHE
+WHERE id_projet = 98 AND statut = 'publie'
+
+
+SELECT p.nom_projet , p.date_fin ,p.date_debut,
+FROM PROJET
+e.Nom AS nomChef , e.Prenom AS prenomchef
+JOIN EMPLOYE e ON p.id_EMPLOYE = e.id_EMPLOYE;
+
+SELECT T.*
+FROM TACHE t
+JOIN PROJET p ON t.id_projet = p.id_projet
+WHERE p.nom_projet = 'Site E-commerce Beauty';
+
+
+SELECT COUNT(*) AS nb_taches_terminees
+FROM TACHE t
+JOIN PROJET p ON p.id_projet = t.id_tache
+WHERE nom_projet = 'Site E-commerce Beauty'
+AND statut = 'publee'
+
+SELECT COUNT(*)
+FROM PROJET P
+WHERE YEAR(date_fin) = 2025;
+
+UPDATE PROJET SET date_fin = "16/05/2026" WHERE 
+id_projet = 234;
+
+UPDATE TACHE SET statut ='publié' WHERE id_projet = 98;
+
+DELETE FROM TACHE WHERE statut ='broullion' AND
+id_projet = 123;
+
+DELETE FROM EMPLOYE WHERE Nom = "ALAMI" AND "AHMED";
+
+
+
+
+
